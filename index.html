@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="images">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="./img/relaxation-3065577.jpg" />
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./img/IMG_5384.JPG" />
+          <div class="text"></div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      <br />
+
+      <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </div>
+
+    <div class="white-space">
+      <div class="heading">
+        <h1>Nang Thaimassage</h1>
+        <p>
+          Entspannen Sie sich bei einer Massage in angenehmer Atmosphäre, mit
+          wohltuenden Aromen und leiser thailändischer Musik.
+          <span>Die Anstrengungen des Tages werden von Ihnen weichen.</span>
+          Nehmen Sie sich eine Auszeit und lassen Sie sich verwöhnen.
+        </p>
+        <h3 class="coupon">
+          Außerdem halte ich stets <b>Gutscheine</b> für Sie oder zum
+          verschenken bereit.
+        </h3>
+      </div>
+
+      <main>
+        <div class="line one"></div>
+
+        <section class="opening" id="opening-days-time">
+          <h2>Öffnungszeiten</h2>
+          <div class="days-time">
+            <div class="days">
+              <p>
+                Montag <br />
+                Dienstag <br />
+                Mittwoch <br />
+                Donnerstag <br />
+                Freitag <br />
+                Samstag <br />
+                Sonntag <br />
+                Feiertag
+              </p>
+            </div>
+            <div class="time">
+              <p>
+                10-19 Uhr <br />
+                10-19 Uhr <br />
+                10-19 Uhr <br />
+                10-19 Uhr <br />
+                10-19 Uhr <br />
+                10-16 Uhr <br />
+                geschlossen <br />
+                geschlossen
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="line two"></div>
+
+        <section class="price">
+          <h2>Preise</h2>
+          <h3>Traditionelle Thaimassage,</h3>
+          <h3>thailändische Öl-Massage,</h3>
+          <h3>Rücken Massage</h3>
+          <pre>
+30    min              25€
+60    min              45€
+90    min              65€
+120  min              85€
+</pre
+          >
+          <h3>Hot Stone Massage oder Kräuter Massage</h3>
+          <h3></h3>
+          <pre>
+60    min              51€
+90    min              74€
+120  min              94€
+</pre
+          >
+        </section>
+
+        <div class="line three"></div>
+
+        <section class="contact" id="contact-info">
+          <h2>Kontakt</h2>
+          <p>
+            Nang <br />
+            Bahnhofstraße 28 <br />
+            65830 Kriftel <br />
+            Tel.: <a href="tel:+4961929759785">06192 9759785</a> <br />
+            Mobil: <a href="tel:+4915217791416">01521 7791416</a>
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <a href="./impressum.html">Impressum</a>
+      </footer>
+    </div>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>
